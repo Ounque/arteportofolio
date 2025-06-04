@@ -1,0 +1,161 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'eagle lake', serif;
+    background-color: #124625;
+}
+nav{
+    width: 100%;
+    background-color: #1b6235;
+}
+nav > ul{
+    margin: 0px;
+    padding: 0px;
+}
+nav li{
+    list-style-type: none;
+}
+nav > ul > li {              
+    float: left;
+    position: relative;
+}
+nav > ul::after{            /*Avec ceci le menu ne collapse pas*/
+    content: "";
+    display: table;
+    clear: both;
+}
+.submenu{                   /*Sous-menus sont cachés*/
+    display: none;
+}
+nav input[type=checkbox]{   /*Masque la checkbox*/
+    display: none;          /*qui va être utilisée pour afficher la page sur des écrans de différents fromats*/
+}
+nav label{                  /*Masque le bouton menu*/
+    display: none;
+}
+nav a{
+    display: inline-block;
+    text-decoration: none;
+}
+nav > ul > li > a{         /*Modifie les propriétés de la police d'écriture du menu*/
+    padding: 10px 29px;
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(21, 255, 126);
+}
+nav li:hover .submenu{
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    padding: 0px;
+    z-index: 1000;
+}
+
+/*Propriétés des sous-menus*/
+.submenu{
+    background-color: #1b6235;
+    opacity: 0.95;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0px 0px 5px rgb(20, 53, 20);
+}
+.submenu li a{
+    padding: 10px 20px;
+    font-size: 13px;
+    width: auto;
+    color: rgb(21, 255, 126);
+    min-width: 250px;
+}
+.submenu li:hover{
+    text-shadow: 0px 0px 3px rgb(174, 255, 120);
+    border-radius: 10px;
+    background-color: #33a05b;
+    box-shadow: 0px 0px 15px #2c864d;
+    width: 100%;
+}
+
+
+/*Met en surbrillance les catégories du menu que la flèche survole*/
+.menu-tattoo:hover > a, .menu-sticker:hover > a, .menu-drawing:hover > a{
+    text-shadow: 0px 0px 3px rgb(174, 255, 120);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #2c864d;
+    box-shadow: 0px 0px 15px #2c864d;
+}
+.menu-contact:hover > a, .menu-information:hover > a{
+    text-shadow: 0px 0px 3px rgb(174, 255, 120);
+    border-radius: 10px;
+    background-color: #2c864d;
+    box-shadow: 0px 0px 15px #2c864d;
+}
+
+nav input[type=checkbox]:checked ~ ul{
+    display: block;
+}
+
+h1{
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(21, 255, 126);
+    text-align: center;
+    text-shadow: 0px 0px 5px rgb(174, 255, 120);
+}
+
+.gallery{
+    text-align: center;
+}
+.gallery-img{
+    display: inline-block;
+    text-align: center;
+}
+.gallery-img img{
+    height: 400px; 
+    width: auto;
+    margin: 0px 20px; 
+    max-width: 100%;
+    border-radius: 15px;
+}
+.gallery p{ 
+    font-size: 14px;
+    color: rgb(21, 255, 126);
+    margin-bottom: 40px;
+}
+.gallery-img img:hover{
+    box-shadow: 0px 0px 25px rgb(21, 255, 126);
+}
+
+
+
+@media screen and (max-width: 780px){
+    .menu-mobile{
+        display: block;
+        color: rgb(21, 255, 126);
+        background-color: #20703d;
+        text-align: center;
+        padding: 12px 0px;
+        border: 2px solid #124625;
+        z-index: 1500;
+    }
+    nav ul{
+        display: none;
+    }
+    nav ul li, nav ul li a{
+        width: 100%;
+        text-align: center;
+    }
+    nav ul li a, nav ul li:hover a{
+        padding: 10px 0px;
+    }
+    nav li:hover .submenu{
+        display: none;
+        position: static;
+    }
+    nav > ul > li > li{
+        box-shadow: 0px 0px 15px #2c864d;
+    }
+    
+}
